@@ -1,0 +1,276 @@
+{
+  "$id": "https://vda231-301.github.io/schemas/VDA 231-301 Subschemas/VDA_231-301_Substance_declaration_subschema_v1.0.0.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "allOf": [
+    {
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json"
+    },
+    {
+      "properties": {
+        "ComponentMasters": {
+          "items": {
+            "$ref": "#/$defs/Substance_Declaration.ComponentMaster"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "TestSeries": {
+          "items": {
+            "$ref": "#/$defs/Substance_Declaration.TestSeries"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Substance_Declaration.ComponentMaster": {
+      "allOf": [
+        {
+          "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.ComponentMaster"
+        },
+        {
+          "properties": {
+            "ComponentName": {
+              "type": "string"
+            },
+            "Mass": {
+              "type": "object",
+              "properties": {
+                "Value": {
+                  "type": "number"
+                },
+                "Unit": {
+                  "type": "string",
+                  "enum": [
+                    "t",
+                    "kg",
+                    "g",
+                    "mg"
+                  ]
+                }
+              }
+            },
+            "NumberOfParts": {
+              "type": "number"
+            },
+            "Coating": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "CoatingMass": {
+                    "type": "number",
+                    "multipleOf": 0.01
+                  },
+                  "CoathingMassUnit": {
+                    "type": "string",
+                    "enum": [
+                      "g",
+                      "kg",
+                      "mg"
+                    ]
+                  },
+                  "CoatingMaterial": {
+                    "type": "string",
+                    "description": "Material identifier"
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "Substance_Declaration.TestSeries": {
+          "properties": {
+            "_id": {
+              "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
+            },
+            "_type": {
+              "const": "TestSeries"
+            },
+            "TestType": {
+              "const": "Substance Declaration"
+            },
+            "Comment": {
+              "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
+            },
+            "ConsolidatedCharacteristicValues": {
+              "$ref": "#/$defs/Substance_Declaration.TargetValuesInformationSet"
+            }
+          },
+          "required": [
+            "_id",
+            "_type",
+            "TestType",
+            "ConsolidatedCharacteristicValues"
+          ],
+          "type": "object"
+    },
+    "Substance_Declaration.ArraySpec": {
+      "description": "Specification of array structure for composition testing data.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/Substance_Declaration.Substance"
+        },
+        {
+          "$ref": "#/$defs/Substance_Declaration.SubstanceCAS"
+        },
+        {
+          "$ref": "#/$defs/Substance_Declaration.Fraction"
+        },
+        {
+          "$ref": "#/$defs/Substance_Declaration.FractionType"
+        }
+      ],
+      "type": "object"
+    },
+    "Substance_Declaration.ArrayValueTargetValues": {
+      "description": "Values corresponding to the composition testing data for target values.",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Substance_Declaration.SubstanceValue"
+          },
+          {
+            "$ref": "#/$defs/Substance_Declaration.SubstanceCASValue"
+          },
+          {
+            "$ref": "#/$defs/Substance_Declaration.FractionValueTargetValues"
+          },
+          {
+            "$ref": "#/$defs/Substance_Declaration.FractionTypeValue"
+          }
+        ]
+      },
+      "maxItems": 4,
+      "minItems": 4,
+      "type": "array"
+    },
+    "Substance_Declaration.Substance": {
+      "properties": {
+        "Property": {
+          "const": "Substance"
+        }
+      },
+      "required": [
+        "Property"
+      ],
+      "type": "object"
+    },
+    "Substance_Declaration.SubstanceValue": {
+      "ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+    },
+    "Substance_Declaration.SubstanceCAS": {
+      "properties": {
+        "Property": {
+          "const": "Substance CAS"
+        }
+      },
+      "required": [
+        "Property"
+      ],
+      "type": "object"
+    },
+    "Substance_Declaration.SubstanceCASValue": {
+      "description": "Substance CAS",
+      "type": "string",
+      "pattern": "^\\d{2,6}-\\d{2}-\\d$"
+    },
+    "Substance_Declaration.Fraction": {
+      "properties": {
+        "Property": {
+          "const": "Fraction"
+        },
+        "Unit": {
+          "const": "%"
+        }
+      },
+      "required": [
+        "Property",
+        "Unit"
+      ],
+      "type": "object"
+    },
+    "Substance_Declaration.FractionType": {
+      "properties": {
+        "Property": {
+          "const": "Fraction Type"
+        }
+      },
+      "required": ["Property"],
+      "type": "object"
+    },
+    "Substance_Declaration.FractionTypeValue": {
+      "description": "Fraction type value",
+      "type": "string",
+      "enum": [
+        "Product",
+        "Process"
+      ]
+    },
+    "Substance_Declaration.FractionValueTargetValues": {
+      "properties": {
+        "maxValue": {
+          "description": "Fraction value in percent with precision to 2 decimal places",
+          "maximum": 100,
+          "minimum": 0,
+          "multipleOf": 0.0001,
+          "type": "number"
+        },
+        "minValue": {
+          "description": "Fraction value in percent with precision to 2 decimal places",
+          "maximum": 100,
+          "minimum": 0,
+          "multipleOf": 0.0001,
+          "type": "number"
+        }
+      },
+      "required": [
+        "maxValue",
+        "minValue"
+      ],
+      "type": "object"
+    },
+    "Substance_Declaration.TargetValuesInformationSet": {
+      "anyOf": [
+        {
+          "required": [
+            "Attributes"
+          ]
+        },
+        {
+          "required": [
+            "ArraySpec",
+            "ArrayValue"
+          ]
+        }
+      ],
+      "properties": {
+        "_id": {
+          "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "InformationSet"
+        },
+        "ArraySpec": {
+          "items": {
+            "$ref": "#/$defs/Substance_Declaration.ArraySpec"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "ArrayValue": {
+          "items": {
+            "$ref": "#/$defs/Substance_Declaration.ArrayValueTargetValues"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

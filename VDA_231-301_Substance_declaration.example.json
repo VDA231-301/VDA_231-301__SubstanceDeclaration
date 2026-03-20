@@ -1,0 +1,401 @@
+{
+  "_id": "b1a2c3d4-1111-2222-3333-444455556666",
+  "_type": "TestingProject",
+  "_schemaVersion": "2.0.0",
+  "Title": "Substance Declaration Example",
+  "Signatory": "Jane Doe",
+  "Client": {
+    "_id": "c1000000-aaaa-bbbb-cccc-ddddeeee0001",
+    "_type": "Location",
+    "Identification": [
+      {
+        "Identifier": "987654321",
+        "Type": "DUNS"
+      }
+    ],
+    "Name": "Automotive OEM GmbH"
+  },
+  "ClientOrderNumber": "CLI-2025-0042",
+  "ContractorID": "c2000000-aaaa-bbbb-cccc-ddddeeee0002",    
+  "LaboratoryOrderNumber": "LAB-2025-SC-0078",
+  "OrderDate": {
+    "Date": "2025-09-01"
+  },
+  "OrderReference": "Substance declaration analysis - Batch 2025-Q3",
+  "ReportDate": {
+    "Date": "2025-09-15"
+  },
+  "ComponentMasters": [
+    {
+      "_id": "d1000000-aaaa-bbbb-cccc-ddddeeee0010",
+      "_type": "ComponentMaster",
+      "SupplierPartNumber": "GL-001",
+      "Designation": "Gleiter",
+      "MaterialName": "PTFE",
+      "Mass": {
+        "Value":12,
+        "Unit": "g"
+      },
+      "NumberOfParts": 1,
+      "Instances": [
+        {
+          "_id": "d2000000-aaaa-bbbb-cccc-ddddeeee0020",
+          "_type": "ComponentInstance",
+          "SerialNumber": "GL-001-001",
+          "ProductionBatchNumber": "PB-20250801"
+        }
+      ]
+    },
+    {
+      "_id": "d1000000-aaaa-bbbb-cccc-ddddeeee0011",
+      "_type": "ComponentMaster",
+      "SupplierPartNumber": "GH-002",
+      "Designation": "Gehäuse",
+      "MaterialName": "PA6GF30",
+      "Mass": {
+        "Value":180,
+        "Unit": "g"
+      },
+      "NumberOfParts": 1,
+      "Instances": [
+        {
+          "_id": "d2000000-aaaa-bbbb-cccc-ddddeeee0021",
+          "_type": "ComponentInstance",
+          "SerialNumber": "GH-002-001",
+          "ProductionBatchNumber": "PB-2025-Q3-002"
+        }
+      ]
+    },
+    {
+      "_id": "d1000000-aaaa-bbbb-cccc-ddddeeee0012",
+      "_type": "ComponentMaster",
+      "SupplierPartNumber": "IN-003",
+      "Designation": "Inlet",
+      "MaterialName": "Stahl S235",
+      "Mass": {
+        "Value":450,
+        "Unit": "g"
+      },
+      "NumberOfParts": 1,
+      "Stack":{
+          "_type": "InformationSet",
+          "_id": "01000000-aaaa-bbbb-cccc-ddddeeee0001",
+          "ArraySpec": [
+            {
+              "Property": "LayerNumber"
+            },
+            {
+              "Property": "Material"
+            },
+            {
+              "Property": "Mass",
+              "Unit": "kg"
+            },
+            {
+              "Property": "Thickness",
+              "Unit": "µm"
+            }
+          ],
+         "ArrayValue": [
+           [1, "Zink", 0.1, 10]
+         ]
+      },
+      "Coating": [
+        {
+          "CoatingMass": 0.1,
+          "CoathingMassUnit": "g",
+          "CoatingMaterial": "Zinc"
+        }
+      ],
+      "Instances": [
+        {
+          "_id": "d2000000-aaaa-bbbb-cccc-ddddeeee0022",
+          "_type": "ComponentInstance",
+          "SerialNumber": "IN-003-001",
+          "ProductionBatchNumber": "PB-2025-Q3-003"
+        }
+      ]
+    },
+    {
+      "_id": "d1000000-aaaa-bbbb-cccc-ddddeeee0013",
+      "_type": "ComponentMaster",
+      "SupplierPartNumber": "SC-004",
+      "Designation": "Schraube",
+      "MaterialName": "Stahl 8.8",
+      "Mass": {
+        "Value":8,
+        "Unit": "g"
+      },
+      "NumberOfParts": 4,
+      "Instances": [
+        {
+          "_id": "d2000000-aaaa-bbbb-cccc-ddddeeee0023",
+          "_type": "ComponentInstance",
+          "SerialNumber": "SC-004-001",
+          "ProductionBatchNumber": "PB-20250801"
+        }
+      ]
+    },
+    {
+      "_id": "d1000000-aaaa-bbbb-cccc-ddddeeee0014",
+      "_type": "ComponentMaster",
+      "Designation": "Montageset",
+      "NumberOfParts": 1,
+      "Instances": [
+        {
+          "_id": "d2000000-aaaa-bbbb-cccc-ddddeeee0023",
+          "_type": "ComponentInstance",
+          "ProductionBatchNumber": "PB-20250801"
+        }
+      ]
+    }
+  ],
+  "TestSeries": [
+    {
+      "_id": "f2000000-aaaa-bbbb-cccc-ddddeeee0300",
+      "_type": "TestSeries",
+      "TestType": "Substance Declaration",
+      "ComponentMasterID": "d1000000-aaaa-bbbb-cccc-ddddeeee0010",
+      "Comment": "Substance declaration for PTFE GL-001",
+      "NumberOfExecutions": 1,
+      "Specification": {
+        "IssueDate": "2018-08",
+        "Number": "IPC-1754",
+        "Type": "IPC"
+      },
+      "PredecessorID": null,
+      "SuccessorID": null,
+      "TestingCenter": {
+        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
+        "_type": "TestingCenter",
+        "Certifications": [
+        ],
+        "Location": {
+          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
+          "_type": "Location",
+          "Identification": [
+            {
+              "Identifier": "112233445",
+              "Type": "DUNS"
+            }
+          ]
+        },
+        "TestingManager": {
+          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
+          "_type": "Person"
+        }
+      },
+      "ConsolidatedCharacteristicValues": {
+        "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
+        "_type": "InformationSet",
+        "ArraySpec": [
+          {
+            "Property": "Substance"
+          },
+          {
+            "Property": "Substance CAS"
+          },
+          {
+            "Property": "Fraction",
+            "Unit": "%"
+          },
+          {
+            "Property": "Fraction Type"
+          }
+        ],
+        "ArrayValue": [
+          ["polytetrafluoroethylene", "9002-84-0", { "minValue": 100.0}, "Product"]
+        ]
+      }
+    },
+    {
+      "_id": "f2000000-aaaa-bbbb-cccc-ddddeeee0300",
+      "_type": "TestSeries",
+      "TestType": "Substance Declaration",
+      "ComponentMasterID": "d1000000-aaaa-bbbb-cccc-ddddeeee0011",
+      "Comment": "Substance declaration for PA6GF30 GH-002",
+      "NumberOfExecutions": 1,
+      "Specification": {
+        "IssueDate": "2018-08",
+        "Number": "IPC-1754",
+        "Type": "IPC"
+      },
+      "PredecessorID": null,
+      "SuccessorID": null,
+      "TestingCenter": {
+        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
+        "_type": "TestingCenter",
+        "Certifications": [
+        ],
+        "Location": {
+          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
+          "_type": "Location",
+          "Identification": [
+            {
+              "Identifier": "112233445",
+              "Type": "DUNS"
+            }
+          ]
+        },
+        "TestingManager": {
+          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
+          "_type": "Person"
+        }
+      },
+      "ConsolidatedCharacteristicValues": {
+        "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
+        "_type": "InformationSet",
+        "ArraySpec": [
+          {
+            "Property": "Substance"
+          },
+          {
+            "Property": "Substance CAS"
+          },
+          {
+            "Property": "Fraction",
+            "Unit": "%"
+          },
+          {
+            "Property": "Fraction Type"
+          }
+        ],
+        "ArrayValue": [
+          ["Polyamid 6 (PA6)", "25038-54-4", {"minValue": 70.0}, "Product"],
+          ["Glasfasern (E-Glass)", "65997-17-3", {"minValue": 30}, "Product"],
+          ["Additive", "", { "minValue": 0.0, "maxValue": 0.1}, "Process"]
+        ]
+      }
+    },
+    {
+      "_id": "f2000000-aaaa-bbbb-cccc-ddddeeee0300",
+      "_type": "TestSeries",
+      "TestType": "Substance Declaration",
+      "ComponentMasterID": "d1000000-aaaa-bbbb-cccc-ddddeeee0012",
+      "Comment": "Substance declaration for Stahl S235 IN-003",
+      "NumberOfExecutions": 1,
+      "Specification": {
+        "IssueDate": "2018-08",
+        "Number": "IPC-1754",
+        "Type": "IPC"
+      },
+      "PredecessorID": null,
+      "SuccessorID": null,
+      "TestingCenter": {
+        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
+        "_type": "TestingCenter",
+        "Certifications": [
+        ],
+        "Location": {
+          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
+          "_type": "Location",
+          "Identification": [
+            {
+              "Identifier": "112233445",
+              "Type": "DUNS"
+            }
+          ]
+        },
+        "TestingManager": {
+          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
+          "_type": "Person"
+        }
+      },
+      "ConsolidatedCharacteristicValues": {
+        "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
+        "_type": "InformationSet",
+        "ArraySpec": [
+          {
+            "Property": "Substance"
+          },
+          {
+            "Property": "Substance CAS"
+          },
+          {
+            "Property": "Fraction",
+            "Unit": "%"
+          },
+          {
+            "Property": "Fraction Type"
+          }
+        ],
+        "ArrayValue": [
+          ["Fe", "7439-89-6", { "minValue": 98.0}, "Product"],
+          ["C", "7440-44-0", { "minValue": 0.05, "maxValue": 0.17}, "Product"],
+          ["Mn", "7439-96-5", { "minValue": 0.0, "maxValue": 1.4}, "Product"],
+          ["P", "7723-14-0", { "minValue": 0.0, "maxValue": 0.035}, "Product"],
+          ["S", "7704-34-9", { "minValue": 0.0, "maxValue": 0.035 }, "Product"],
+          ["N", "7727-37-9", { "minValue": 0.0, "maxValue": 0.012 }, "Product"],
+          ["Cu", "7440-50-8", { "minValue": 0.0, "maxValue": 0.55}, "Product"]
+        ]
+      }
+    },
+    {
+      "_id": "f2000000-aaaa-bbbb-cccc-ddddeeee0300",
+      "_type": "TestSeries",
+      "TestType": "Substance Declaration",
+      "ComponentMasterID": "d1000000-aaaa-bbbb-cccc-ddddeeee0013",
+      "Comment": "Substance declaration for Stahl 8.8 SC-004",
+      "NumberOfExecutions": 1,
+      "Specification": {
+        "IssueDate": "2018-08",
+        "Number": "IPC-1754",
+        "Type": "IPC"
+      },
+      "PredecessorID": null,
+      "SuccessorID": null,
+      "TestingCenter": {
+        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
+        "_type": "TestingCenter",
+        "Certifications": [
+        ],
+        "Location": {
+          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
+          "_type": "Location",
+          "Identification": [
+            {
+              "Identifier": "112233445",
+              "Type": "DUNS"
+            }
+          ]
+        },
+        "TestingManager": {
+          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
+          "_type": "Person"
+        }
+      },
+      "ConsolidatedCharacteristicValues": {
+        "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
+        "_type": "InformationSet",
+        "ArraySpec": [
+          {
+            "Property": "Substance"
+          },
+          {
+            "Property": "Substance CAS"
+          },
+          {
+            "Property": "Fraction",
+            "Unit": "%"
+          },
+          {
+            "Property": "Fraction Type"
+          }
+        ],
+        "ArrayValue": [
+          ["Fe", "7439-89-6", { "minValue": 97.0}, "Product"],
+          ["C", "7440-44-0", { "minValue": 0.19, "maxValue": 0.25}, "Product"],
+          ["Si", "7440-21-3", { "minValue": 0.0, "maxValue": 0.4}, "Product"],
+          ["Mn", "7439-96-5", { "minValue": 1.1, "maxValue": 1.4}, "Product"],
+          ["P", "7723-14-0", { "minValue": 0.0, "maxValue": 0.025}, "Product"],
+          ["S", "7704-34-9", { "minValue": 0.0, "maxValue": 0.015}, "Product"],
+          ["Cr", "7440-47-3", { "minValue": 0.15, "maxValue": 0.35}, "Product"],
+          ["Ti", "7440-32-6", { "minValue": 0.02, "maxValue": 0.05}, "Product"],
+          ["Al", "7429-90-5", { "minValue": 0.02, "maxValue": 0.06 }, "Product"],
+          ["B", "7440-42-8", { "minValue": 0.0008, "maxValue": 0.005}, "Product"],
+          ["Zn", "7440-66-6", { "minValue": 0.0, "maxValue": 0.0001}, "Product"]
+        ]
+      }
+    }
+  ]
+}
