@@ -1,156 +1,112 @@
-<img width="191" height="163" alt="Substance declaration VDA-Logo" src="https://github.com/user-attachments/assets/f6610f12-2a07-4cbb-bd99-76f156b219e4" />
+<img width="191" height="163" alt="Substance Declaration VDA Logo"
+src="https://github.com/user-attachments/assets/f6610f12-2a07-4cbb-bd99-76f156b219e4" />
 
 # Subschema Substance Declaration
 
 ## Purpose and Scope
 
-The **Substance Declaration** subschema is part of the **VDA 231‑301** standard and provides a **standardized, machine‑readable representation of substance‑related information** within digital sampling and approval processes.
+The **Substance Declaration** subschema is a specialized extension of the **VDA 231‑301 recommendation**.  
+It provides a **standardized, machine‑readable data structure** for the exchange of substance‑related information within digital sampling, approval, and regulatory documentation processes.
 
-It enables a **structured, JSON‑based data exchange** that supports regulatory requirements, integrates established industry solutions (e.g. IMDS), and remains **applicable across different industries**.
+The subschema enables a **structured JSON‑based data exchange** that supports regulatory information requirements, interoperability across IT systems, and traceability along complex supply chains.
 
-The main objectives of the subschema are:
+Its main objectives are:
+- Transparent representation of the **chemical composition** of materials and articles
+- Support of **regulatory information duties** through structured data
+- Harmonization of existing substance declaration approaches
+- Seamless and automated **data exchange across organizational and industry boundaries**
 
-- Transparent representation of the **chemical composition** of materials and articles  
-- Support of **regulatory compliance assessments**  
-- Harmonization of existing substance declaration approaches  
-- Seamless, automated data exchange along the supply chain  
+---
+
+## Position within VDA 231‑301 and Relation to Existing Systems
+
+This subschema is part of the **VDA 231‑301 JSON Schema ecosystem** and builds upon the generic VDA 231‑301 data model.
 
 > [!IMPORTANT]
-> This subschema provides data only and does not perform regulatory evaluation, classification, or compliance decisions.
+> ⚠️ **Important clarification:**
+> - This subschema defines the **data structure only**.
+> - It **does not replace** existing systems or tools.
+> - It **does not perform regulatory evaluation, legal interpretation, classification, or compliance decisions**.
+
+The authoritative legal and regulatory interpretation of substance data remains the responsibility of the applicable legal framework and the systems or processes in which the data is used.
+
+Any changes intended to become part of the official VDA 231‑301 recommendation must follow the formal VDA committee and release process.
 
 ---
 
 ## Regulatory Framework
 
-The obligation to declare substances is primarily driven by international and regional chemicals and product legislation. Key regulatory drivers include:
+The obligation to declare substances is driven by international and regional chemicals and product legislation.  
+Typical regulatory drivers include:
 
 ### European Union
-
 - **REACH Regulation (EC) No. 1907/2006**  
-  Requires manufacturers and importers to identify and communicate information on substances contained in products, in particular:
   - Registration obligations for substances  
   - Information duties within the supply chain (Articles 31–33)  
-  - Declaration of **SVHC substances** above 0.1% w/w in articles  
-
+  - Declaration of **SVHC substances** above 0.1% w/w in articles
 - **CLP Regulation (EC) No. 1272/2008**  
-  Governs the classification and labeling of substances and mixtures and forms the basis for hazard‑related attributes.
-
-- **RoHS Directive 2011/65/EU** (for electrical and electronic equipment)  
-  Defines substance restrictions with explicit concentration limits.
+  Basis for hazard‑related substance attributes
+- **RoHS Directive 2011/65/EU**  
+  Substance restrictions for electrical and electronic equipment
 
 ### Other International Regulations (selection)
+- **TSCA** (United States)
+- **China REACH / MEE Order No. 12**
+- **GHS** as the globally harmonized system for classification and labeling
 
-- **TSCA** (United States)  
-- **China REACH / MEE Order No. 12**  
-- **GHS** as the globally harmonized system for classification and labeling  
-
-➡️ **Implication:** Companies must provide substance‑related information in a structured, traceable, and auditable manner. The Substance Declaration subschema provides the technical foundation for this purpose.
+➡️ **Implication:**  
+Organizations must provide substance‑related information in a **structured, traceable, and auditable form**.  
+The Substance Declaration subschema provides the **technical foundation** for this purpose.
 
 ---
 
 ## Substance Declaration in the Automotive Industry – IMDS
 
-In the automotive industry, the **International Material Data System (IMDS)** has been the established solution for many years:
+In the automotive industry, the **International Material Data System (IMDS)** is an established solution for substance and material data exchange between suppliers and OEMs. 
 
-- Full declaration of the **substance composition** of materials and parts  
-- Use of **CAS numbers** for unambiguous substance identification  
-- Hierarchical data structure (part → material → substance)  
-- Mandatory for nearly all automotive OEMs  
+Within this context, the Substance Declaration subschema:
+- does not replace or replicate existing domain-specific systems such as IMDS,
+- complements existing IMDS‑based processes,
+- enables interoperability with other IT systems,
+- and supports structured data reuse beyond a single platform.
 
-### Relationship to VDA 231‑301
-
-The Substance Declaration subschema:
-
-- Is **conceptually compatible** with IMDS  
-- Represents core IMDS information in a **neutral and standardized form**  
-- Is **system‑ and industry‑independent**  
-- Enables **integration of IMDS data** without replicating or replacing the IMDS system  
-
-➡️ The objective is **interoperability**, not replacement.
+For **non‑automotive industries**, IMDS serves only as an **illustrative example** of an established substance declaration system.  
+The subschema itself is **not tied to IMDS** and can be used independently of automotive‑specific platforms.
 
 ---
 
-## Substance Declaration Outside the Automotive Industry
+## Applicability Beyond the Automotive Industry
 
-Outside the automotive sector, **no single global system** comparable to IMDS exists. Instead, various heterogeneous approaches are used:
+Although originating from the automotive context, this subschema is **not limited to the automotive industry**.
 
-### Electronics & Consumer Goods
+It is designed as a **generic, industry‑agnostic data model** for the exchange of substance‑related information and can be applied wherever substances, materials, or articles must be declared or documented in a machine‑readable form.
 
-- IEC 62474 / Declarable Substance List (DSL)  
-- XML‑based substance declarations  
-- Strong focus on restricted substances and compliance statements  
+Typical non‑automotive use cases include:
+- Chemicals and chemical products
+- Electrical and electronic equipment (EEE)
+- Consumer goods
+- Industrial materials and semi‑finished products
+- Construction products
+- Regulatory data exchange platforms
 
-### Chemical Industry
-
-- Safety Data Sheets (SDS)  
-- Formulation and mixture information  
-- Highly regulated, but predominantly **document‑based rather than data‑driven**  
-
-### Construction Products, Textiles, Medical Devices
-
-- Sector‑specific regulatory requirements (e.g. CPR, MDR)  
-- Often project‑specific Excel or PDF‑based declarations  
-
-➡️ These approaches are characterized by **high heterogeneity**, limited automation, and low interoperability.
+By intentionally avoiding assumptions about specific tools, business processes, or regulatory decision logic, the subschema serves as a **neutral interoperability layer** across different industries.
 
 ---
 
-## Role of the Substance Declaration Subschema
+## Important Note
 
-The Substance Declaration subschema addresses these challenges by providing:
-
-- A **JSON‑based exchange format**  
-- Unambiguous substance identification (e.g. CAS number)  
-- Structured specification of:
-  - Substance content  
-  - Concentration values or ranges  
-    
-The subschema is therefore:
-
-- **Applicable across industries**  
-- **Extensible** for additional regulations or use cases  
-- Suitable as a **common data language** between OEMs, suppliers, IT systems, and regulatory reporting processes  
+> [!IMPORTANT]
+> This subschema provides **structured substance‑related data only**.  
+> It does **not** perform regulatory evaluation, legal interpretation, classification,
+> or compliance decisions.  
+> These responsibilities remain with the applicable legal framework and the systems
+> or processes in which the data is used.
 
 ---
 
-## Relation to the VDA 231‑301 Overall Standard
+## License and Contribution
 
-Within VDA 231‑301, the Substance Declaration subschema represents a **core functional component** and is typically used in combination with:
+The VDA 231‑301 JSON schemas, including this subschema, are released under the **MIT License**, allowing free use, modification, and distribution.
 
-- Sampling and approval workflows
-- Material and substance schemas  
-- Compliance and evaluation logic  
-
-
-It directly supports the strategic objective of VDA 231‑301:
-
-> **End‑to‑end digital, standardized material and substance data across the industrial value chain.**
-
----
-
-## Target Audience of This Repository
-
-- OEMs and suppliers  
-- Software and platform providers  
-- Standardization and expert bodies  
-- Regulatory and compliance specialists  
-
-----
-## Explicit Non-Goals
-
-The Substance Declaration subschema is intentionally limited in scope.
-
-It does **not**:
-
-- Perform regulatory, toxicological, or legal evaluations  
-- Determine regulatory compliance or conformity  
-- Replace or replicate existing domain-specific systems such as IMDS  
-
-The subschema focuses exclusively on the **standardized exchange of substance-related data**.
-Any legal interpretation, assessment, or compliance decision remains the responsibility of the data-providing organization and its downstream users.
-
----
-## Disclaimer
-
-This repository provides a **technical data schema** only and does **not constitute legal advice**.  
-Responsibility for regulatory interpretation and compliance remains with the data‑providing organization.
+Contributions are welcome.  
+If contributions are intended to become part of the official VDA 231‑301 recommendation, they must follow the formal VDA committee and release process.
