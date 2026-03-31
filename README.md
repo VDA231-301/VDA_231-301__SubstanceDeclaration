@@ -37,17 +37,27 @@ Any changes intended to become part of the official VDA 231‑301 recommendation
 ## Regulatory Framework
 
 The obligation to declare substances is driven by international and regional chemicals and product legislation.  
-Typical regulatory drivers include:
+Typical regulatory drivers include (⚠️This list is not intended to be complete):
 
 ### European Union
 - **REACH Regulation (EC) No. 1907/2006**  
   - Registration obligations for substances  
   - Information duties within the supply chain (Articles 31–33)  
   - Declaration of **SVHC substances** above 0.1% w/w in articles
+  - Annex XIV & XVII
 - **CLP Regulation (EC) No. 1272/2008**  
   Basis for hazard‑related substance attributes
 - **RoHS Directive 2011/65/EU**  
   Substance restrictions for electrical and electronic equipment
+- **ELV Directive 2000/53/EC / upcoming ELV Regulation (ELVR)**  
+  - Substance restrictions and information requirements for vehicles and vehicle components at end‑of‑life  
+  - Obligations regarding the declaration of restricted substances (e.g. heavy metals) in vehicles and materials  
+  - Increasing focus on digital, structured substance information to support circular economy, reuse, and recycling concepts  
+- **POP Regulation (EU) 2019/1021**  
+  - Restriction and prohibition of **persistent organic pollutants (POPs)** in substances, mixtures, and articles  
+  - Information duties along the supply chain for articles containing POPs above defined concentration limits  
+  - Requirement for traceable substance information to support waste management and end‑of‑life treatment
+  
 
 ### Other International Regulations (selection)
 - **TSCA** (United States)
