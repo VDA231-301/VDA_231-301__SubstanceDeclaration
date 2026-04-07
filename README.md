@@ -2,7 +2,8 @@
 src="https://github.com/user-attachments/assets/f6610f12-2a07-4cbb-bd99-76f156b219e4" />
 
 # Subschema Substance Declaration
-
+🔗 This subschema is part of the VDA 231‑301 ecosystem
+→ https://github.com/VDA231-301
 ## Purpose and Scope
 
 The **Substance Declaration** subschema is a specialized extension of the **VDA 231‑301 recommendation**.  
