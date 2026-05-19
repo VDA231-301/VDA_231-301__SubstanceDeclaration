@@ -263,7 +263,8 @@
         "ArrayValue": [
           ["Polyamid 6 (PA6)", "25038-54-4", {"minValue": 70.0}, "Product"],
           ["Glasfasern (E-Glass)", "65997-17-3", {"minValue": 30}, "Product"],
-          ["Additive", "", { "minValue": 0.0, "maxValue": 0.1}, "Process"]
+          ["Additive", "", { "minValue": 0.0, "maxValue": 0.1}, "Process"],
+          ["Additive", "", { "minValue": 0.0, "maxValue": 0.1}, "Product-not-to-declare"]
         ]
       }
     },
