@@ -209,7 +209,7 @@
       "enum": [
         "Product",
         "Process",
-        "Product-not-to-declare"
+        "Substance-not-to-declare"
       ]
     },
     "Substance_Declaration.FractionValueTargetValues": {
