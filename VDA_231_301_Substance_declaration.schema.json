@@ -1,9 +1,9 @@
 {
-  "$id": "https://vda231-301.github.io/schemas/VDA 231-301 Subschemas/VDA_231-301_Substance_declaration_subschema_v1.0.0.schema.json",
+  "$id": "https://vda231-301.github.io/schemas/SubstanceDeclaration/VDA_231_301_Substance_declaration_v2.0.0.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "allOf": [
     {
-      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v1.0.0.schema.json"
+      "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json"
     },
     {
       "properties": {
@@ -16,7 +16,16 @@
         },
         "TestSeries": {
           "items": {
-            "$ref": "#/$defs/Substance_Declaration.TestSeries"
+            "type": "object",
+            "if": {
+              "$ref": "#/$defs/Substance_Declaration.TestSeriesCondition"
+            },
+            "then": {
+              "$ref": "#/$defs/Substance_Declaration.TestSeries"
+            }
+          },
+          "contains": {
+            "$ref": "#/$defs/Substance_Declaration.TestSeriesCondition"
           },
           "minItems": 1,
           "type": "array"
@@ -25,10 +34,18 @@
     }
   ],
   "$defs": {
+    "Substance_Declaration.TestSeriesCondition": {
+      "type": "object",
+      "properties": {
+        "TestType": {
+          "const": "Substance Declaration"
+        }
+      }
+    },
     "Substance_Declaration.ComponentMaster": {
       "allOf": [
         {
-          "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.ComponentMaster"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.ComponentMaster"
         },
         {
           "properties": {
@@ -84,30 +101,30 @@
       ]
     },
     "Substance_Declaration.TestSeries": {
-          "properties": {
-            "_id": {
-              "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
-            },
-            "_type": {
-              "const": "TestSeries"
-            },
-            "TestType": {
-              "const": "Substance Declaration"
-            },
-            "Comment": {
-              "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedText"
-            },
-            "ConsolidatedCharacteristicValues": {
-              "$ref": "#/$defs/Substance_Declaration.TargetValuesInformationSet"
-            }
-          },
-          "required": [
-            "_id",
-            "_type",
-            "TestType",
-            "ConsolidatedCharacteristicValues"
-          ],
-          "type": "object"
+      "properties": {
+        "_id": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.Identifier"
+        },
+        "_type": {
+          "const": "TestSeries"
+        },
+        "TestType": {
+          "const": "Substance Declaration"
+        },
+        "Comment": {
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedText"
+        },
+        "ConsolidatedCharacteristicValues": {
+          "$ref": "#/$defs/Substance_Declaration.TargetValuesInformationSet"
+        }
+      },
+      "required": [
+        "_id",
+        "_type",
+        "TestType",
+        "ConsolidatedCharacteristicValues"
+      ],
+      "type": "object"
     },
     "Substance_Declaration.ArraySpec": {
       "description": "Specification of array structure for composition testing data.",
@@ -161,7 +178,7 @@
       "type": "object"
     },
     "Substance_Declaration.SubstanceValue": {
-      "ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.RestrictedString"
+      "ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.RestrictedString"
     },
     "Substance_Declaration.SubstanceCAS": {
       "properties": {
@@ -200,7 +217,9 @@
           "const": "Fraction Type"
         }
       },
-      "required": ["Property"],
+      "required": [
+        "Property"
+      ],
       "type": "object"
     },
     "Substance_Declaration.FractionTypeValue": {
@@ -208,7 +227,8 @@
       "type": "string",
       "enum": [
         "Product",
-        "Process"
+        "Process",
+        "Substance-not-to-declare"
       ]
     },
     "Substance_Declaration.FractionValueTargetValues": {
@@ -250,7 +270,7 @@
       ],
       "properties": {
         "_id": {
-          "$ref": "../generic/VDA_231-301_generic_v1.0.0.schema.json#/$defs/Generic.Identifier"
+          "$ref": "https://vda231-301.github.io/schemas/generic/VDA_231-301_generic_v2.0.0.schema.json#/$defs/Generic.Identifier"
         },
         "_type": {
           "const": "InformationSet"

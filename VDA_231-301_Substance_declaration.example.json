@@ -16,7 +16,7 @@
     "Name": "Automotive OEM GmbH"
   },
   "ClientOrderNumber": "CLI-2025-0042",
-  "ContractorID": "c2000000-aaaa-bbbb-cccc-ddddeeee0002",    
+  "ContractorID": "c2000000-aaaa-bbbb-cccc-ddddeeee0002",
   "LaboratoryOrderNumber": "LAB-2025-SC-0078",
   "OrderDate": {
     "Date": "2025-09-01"
@@ -33,7 +33,7 @@
       "Designation": "Gleiter",
       "MaterialName": "PTFE",
       "Mass": {
-        "Value":12,
+        "Value": 12,
         "Unit": "g"
       },
       "NumberOfParts": 1,
@@ -53,7 +53,7 @@
       "Designation": "Gehäuse",
       "MaterialName": "PA6GF30",
       "Mass": {
-        "Value":180,
+        "Value": 180,
         "Unit": "g"
       },
       "NumberOfParts": 1,
@@ -73,32 +73,37 @@
       "Designation": "Inlet",
       "MaterialName": "Stahl S235",
       "Mass": {
-        "Value":450,
+        "Value": 450,
         "Unit": "g"
       },
       "NumberOfParts": 1,
-      "Stack":{
-          "_type": "InformationSet",
-          "_id": "01000000-aaaa-bbbb-cccc-ddddeeee0001",
-          "ArraySpec": [
-            {
-              "Property": "LayerNumber"
-            },
-            {
-              "Property": "Material"
-            },
-            {
-              "Property": "Mass",
-              "Unit": "kg"
-            },
-            {
-              "Property": "Thickness",
-              "Unit": "µm"
-            }
-          ],
-         "ArrayValue": [
-           [1, "Zink", 0.1, 10]
-         ]
+      "Stack": {
+        "_type": "InformationSet",
+        "_id": "01000000-aaaa-bbbb-cccc-ddddeeee0001",
+        "ArraySpec": [
+          {
+            "Property": "LayerNumber"
+          },
+          {
+            "Property": "Material"
+          },
+          {
+            "Property": "Mass",
+            "Unit": "kg"
+          },
+          {
+            "Property": "Thickness",
+            "Unit": "µm"
+          }
+        ],
+        "ArrayValue": [
+          [
+            1,
+            "Zink",
+            0.1,
+            10
+          ]
+        ]
       },
       "Coating": [
         {
@@ -123,7 +128,7 @@
       "Designation": "Schraube",
       "MaterialName": "Stahl 8.8",
       "Mass": {
-        "Value":8,
+        "Value": 8,
         "Unit": "g"
       },
       "NumberOfParts": 4,
@@ -165,26 +170,7 @@
       },
       "PredecessorID": null,
       "SuccessorID": null,
-      "TestingCenter": {
-        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
-        "_type": "TestingCenter",
-        "Certifications": [
-        ],
-        "Location": {
-          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
-          "_type": "Location",
-          "Identification": [
-            {
-              "Identifier": "112233445",
-              "Type": "DUNS"
-            }
-          ]
-        },
-        "TestingManager": {
-          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
-          "_type": "Person"
-        }
-      },
+      "TestingCenterID": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
       "ConsolidatedCharacteristicValues": {
         "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
         "_type": "InformationSet",
@@ -204,7 +190,14 @@
           }
         ],
         "ArrayValue": [
-          ["polytetrafluoroethylene", "9002-84-0", { "minValue": 100.0}, "Product"]
+          [
+            "polytetrafluoroethylene",
+            "9002-84-0",
+            {
+              "minValue": 100.0
+            },
+            "Product"
+          ]
         ]
       }
     },
@@ -222,26 +215,7 @@
       },
       "PredecessorID": null,
       "SuccessorID": null,
-      "TestingCenter": {
-        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
-        "_type": "TestingCenter",
-        "Certifications": [
-        ],
-        "Location": {
-          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
-          "_type": "Location",
-          "Identification": [
-            {
-              "Identifier": "112233445",
-              "Type": "DUNS"
-            }
-          ]
-        },
-        "TestingManager": {
-          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
-          "_type": "Person"
-        }
-      },
+      "TestingCenterID": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
       "ConsolidatedCharacteristicValues": {
         "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
         "_type": "InformationSet",
@@ -261,9 +235,42 @@
           }
         ],
         "ArrayValue": [
-          ["Polyamid 6 (PA6)", "25038-54-4", {"minValue": 70.0}, "Product"],
-          ["Glasfasern (E-Glass)", "65997-17-3", {"minValue": 30}, "Product"],
-          ["Additive", "", { "minValue": 0.0, "maxValue": 0.1}, "Process"]
+          [
+            "Polyamid 6 (PA6)",
+            "25038-54-4",
+            {
+              "minValue": 69.0,
+              "maxValue": 71.0
+            },
+            "Product"
+          ],
+          [
+            "Glasfasern (E-Glass)",
+            "65997-17-3",
+            {
+              "minValue": 29.0,
+              "maxValue": 31.0
+            },
+            "Product"
+          ],
+          [
+            "Additive",
+            "",
+            {
+              "minValue": 0.0,
+              "maxValue": 1.0
+            },
+            "Process"
+          ],
+          [
+            "Additive",
+            "",
+            {
+              "minValue": 0.0,
+              "maxValue": 1.0
+            },
+            "Substance-not-to-declare"
+          ]
         ]
       }
     },
@@ -281,26 +288,7 @@
       },
       "PredecessorID": null,
       "SuccessorID": null,
-      "TestingCenter": {
-        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
-        "_type": "TestingCenter",
-        "Certifications": [
-        ],
-        "Location": {
-          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
-          "_type": "Location",
-          "Identification": [
-            {
-              "Identifier": "112233445",
-              "Type": "DUNS"
-            }
-          ]
-        },
-        "TestingManager": {
-          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
-          "_type": "Person"
-        }
-      },
+      "TestingCenterID": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
       "ConsolidatedCharacteristicValues": {
         "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
         "_type": "InformationSet",
@@ -320,13 +308,68 @@
           }
         ],
         "ArrayValue": [
-          ["Fe", "7439-89-6", { "minValue": 98.0}, "Product"],
-          ["C", "7440-44-0", { "minValue": 0.05, "maxValue": 0.17}, "Product"],
-          ["Mn", "7439-96-5", { "minValue": 0.0, "maxValue": 1.4}, "Product"],
-          ["P", "7723-14-0", { "minValue": 0.0, "maxValue": 0.035}, "Product"],
-          ["S", "7704-34-9", { "minValue": 0.0, "maxValue": 0.035 }, "Product"],
-          ["N", "7727-37-9", { "minValue": 0.0, "maxValue": 0.012 }, "Product"],
-          ["Cu", "7440-50-8", { "minValue": 0.0, "maxValue": 0.55}, "Product"]
+          [
+            "Fe",
+            "7439-89-6",
+            {
+              "minValue": 98.0
+            },
+            "Product"
+          ],
+          [
+            "C",
+            "7440-44-0",
+            {
+              "minValue": 0.05,
+              "maxValue": 0.17
+            },
+            "Product"
+          ],
+          [
+            "Mn",
+            "7439-96-5",
+            {
+              "minValue": 0.0,
+              "maxValue": 1.4
+            },
+            "Product"
+          ],
+          [
+            "P",
+            "7723-14-0",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.035
+            },
+            "Product"
+          ],
+          [
+            "S",
+            "7704-34-9",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.035
+            },
+            "Product"
+          ],
+          [
+            "N",
+            "7727-37-9",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.012
+            },
+            "Product"
+          ],
+          [
+            "Cu",
+            "7440-50-8",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.55
+            },
+            "Product"
+          ]
         ]
       }
     },
@@ -344,26 +387,7 @@
       },
       "PredecessorID": null,
       "SuccessorID": null,
-      "TestingCenter": {
-        "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
-        "_type": "TestingCenter",
-        "Certifications": [
-        ],
-        "Location": {
-          "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
-          "_type": "Location",
-          "Identification": [
-            {
-              "Identifier": "112233445",
-              "Type": "DUNS"
-            }
-          ]
-        },
-        "TestingManager": {
-          "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
-          "_type": "Person"
-        }
-      },
+      "TestingCenterID": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
       "ConsolidatedCharacteristicValues": {
         "_id": "f4000000-aaaa-bbbb-cccc-ddddeeee0320",
         "_type": "InformationSet",
@@ -383,18 +407,183 @@
           }
         ],
         "ArrayValue": [
-          ["Fe", "7439-89-6", { "minValue": 97.0}, "Product"],
-          ["C", "7440-44-0", { "minValue": 0.19, "maxValue": 0.25}, "Product"],
-          ["Si", "7440-21-3", { "minValue": 0.0, "maxValue": 0.4}, "Product"],
-          ["Mn", "7439-96-5", { "minValue": 1.1, "maxValue": 1.4}, "Product"],
-          ["P", "7723-14-0", { "minValue": 0.0, "maxValue": 0.025}, "Product"],
-          ["S", "7704-34-9", { "minValue": 0.0, "maxValue": 0.015}, "Product"],
-          ["Cr", "7440-47-3", { "minValue": 0.15, "maxValue": 0.35}, "Product"],
-          ["Ti", "7440-32-6", { "minValue": 0.02, "maxValue": 0.05}, "Product"],
-          ["Al", "7429-90-5", { "minValue": 0.02, "maxValue": 0.06 }, "Product"],
-          ["B", "7440-42-8", { "minValue": 0.0008, "maxValue": 0.005}, "Product"],
-          ["Zn", "7440-66-6", { "minValue": 0.0, "maxValue": 0.0001}, "Product"]
+          [
+            "Fe",
+            "7439-89-6",
+            {
+              "minValue": 97.0
+            },
+            "Product"
+          ],
+          [
+            "C",
+            "7440-44-0",
+            {
+              "minValue": 0.19,
+              "maxValue": 0.25
+            },
+            "Product"
+          ],
+          [
+            "Si",
+            "7440-21-3",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.4
+            },
+            "Product"
+          ],
+          [
+            "Mn",
+            "7439-96-5",
+            {
+              "minValue": 1.1,
+              "maxValue": 1.4
+            },
+            "Product"
+          ],
+          [
+            "P",
+            "7723-14-0",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.025
+            },
+            "Product"
+          ],
+          [
+            "S",
+            "7704-34-9",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.015
+            },
+            "Product"
+          ],
+          [
+            "Cr",
+            "7440-47-3",
+            {
+              "minValue": 0.15,
+              "maxValue": 0.35
+            },
+            "Product"
+          ],
+          [
+            "Ti",
+            "7440-32-6",
+            {
+              "minValue": 0.02,
+              "maxValue": 0.05
+            },
+            "Product"
+          ],
+          [
+            "Al",
+            "7429-90-5",
+            {
+              "minValue": 0.02,
+              "maxValue": 0.06
+            },
+            "Product"
+          ],
+          [
+            "B",
+            "7440-42-8",
+            {
+              "minValue": 0.0008,
+              "maxValue": 0.005
+            },
+            "Product"
+          ],
+          [
+            "Zn",
+            "7440-66-6",
+            {
+              "minValue": 0.0,
+              "maxValue": 0.0001
+            },
+            "Product"
+          ]
         ]
+      }
+    }
+  ],
+  "TestingCenters": [
+    {
+      "_id": "c2000000-aaaa-bbbb-cccc-ddddeeee0002",
+      "_type": "TestingCenter",
+      "Certifications": [
+        {
+          "_id": "c3000000-aaaa-bbbb-cccc-ddddeeee0003",
+          "_type": "Certification",
+          "AccreditationDate": {
+            "Date": "2022-06-15"
+          },
+          "Specification": {
+            "IssueDate": "2018-03",
+            "Number": "17025",
+            "Type": "DIN EN ISO/IEC"
+          },
+          "ValidUntil": {
+            "Date": "2027-06-15"
+          }
+        }
+      ],
+      "Location": {
+        "_id": "c4000000-aaaa-bbbb-cccc-ddddeeee0004",
+        "_type": "Location",
+        "Address": {
+          "_id": "c5000000-aaaa-bbbb-cccc-ddddeeee0005",
+          "_type": "ContactDetails",
+          "Street": "Laborstrasse",
+          "HouseNumber": "12",
+          "ZipCode": "70569",
+          "City": "Stuttgart",
+          "Country": "Germany",
+          "EMail": "lab@materialtesting.de",
+          "Phone": "+49 711 1234567"
+        },
+        "Identification": [
+          {
+            "Identifier": "112233445",
+            "Type": "DUNS"
+          }
+        ],
+        "Name": "Material Testing Lab Stuttgart"
+      },
+      "TestingManager": {
+        "_id": "c6000000-aaaa-bbbb-cccc-ddddeeee0006",
+        "_type": "Person",
+        "FirstName": "Klaus",
+        "LastName": "Schmidt",
+        "Title": "Dr.-Ing.",
+        "EMail": "k.schmidt@materialtesting.de",
+        "OrganizationIdentification": [
+          {
+            "Identifier": "112233445",
+            "Type": "DUNS"
+          }
+        ]
+      }
+    },
+    {
+      "_id": "c7000000-aaaa-bbbb-cccc-ddddeeee0007",
+      "_type": "TestingCenter",
+      "Certifications": [],
+      "Location": {
+        "_id": "c8000000-aaaa-bbbb-cccc-ddddeeee0008",
+        "_type": "Location",
+        "Identification": [
+          {
+            "Identifier": "112233445",
+            "Type": "DUNS"
+          }
+        ]
+      },
+      "TestingManager": {
+        "_id": "c9000000-aaaa-bbbb-cccc-ddddeeee0009",
+        "_type": "Person"
       }
     }
   ]
